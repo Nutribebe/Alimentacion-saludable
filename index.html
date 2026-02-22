@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2012635556262710');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2012635556262710&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentación Segura | Método y Recetario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Quicksand', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .bg-baby-warm { background-color: #FFF9F5; }
+        .text-coral { color: #FF7F67; }
+        .bg-coral { background-color: #FF7F67; }
+        
+        .btn-glow { 
+            background: linear-gradient(135deg, #FF7F67 0%, #FF4F37 100%); 
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 127, 103, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 127, 103, 0); }
+        }
+
+        /* EFECTO INTERACTIVO DE RESALTE */
+        .interactive-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        .interactive-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(255, 127, 103, 0.25);
+            border-color: #FF7F67;
+        }
+        .interactive-card:hover i {
+            transform: rotate(-10deg) scale(1.2);
+            color: #FF4F37;
+        }
+        .interactive-card i {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-baby-warm text-gray-800 antialiased">
+
+    <div class="bg-black text-white text-center py-2 text-[11px] font-bold uppercase tracking-widest px-4 sticky top-0 z-50">
+        ⚠️ OFERTA: Solo quedan <span class="text-yellow-400" id="slots">14</span> cupos con el 85% de descuento.
+    </div>
+
+    <header class="py-12 md:py-20 px-6 bg-white rounded-b-[4rem] shadow-md">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-coral font-bold uppercase tracking-widest text-xs mb-4 block italic">Nutrición con amor y seguridad</span>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 text-slate-900">
+                    Prepara su <span class="italic text-coral">futuro</span> en cada bocado.
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed border-l-4 border-coral pl-6">
+                    Más de 180 recetas diseñadas para que tu bebé descubra el mundo con salud, variedad y sin miedos.
+                </p>
+                <div class="space-y-4">
+                    <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow inline-block w-full text-white text-center px-8 py-6 rounded-3xl font-black text-2xl italic">
+                        ¡EMPEZAR AHORA (50% OFF)!
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://img.freepik.com/fotos-premium/bebe-feliz-sentado-su-silla-comiendo-si-mismo-manos-cara-manchadas-comida-bebes_1062229-1041.jpg" 
+                     class="rounded-[3.5rem] shadow-2xl w-full h-[500px] object-cover border-[12px] border-baby-warm" alt="Bebé comiendo feliz">
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 text-center bg-baby-warm">
+        <h2 class="text-5xl font-bold mb-16 italic text-gray-800">Tus Regalos de Hoy:</h2>
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-coral border-2 border-transparent">
+                <i class="fas fa-calendar-alt text-coral text-5xl mb-6 inline-block"></i>
+                <p class="font-black text-xl uppercase italic leading-tight">Menú x 3 semanas (Incluye Snacks)</p>
+            </div>
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-yellow-400 border-2 border-transparent">
+                <i class="fas fa-book-open text-yellow-400 text-5xl mb-6 inline-block"></i>
+                <p class="font-black text-xl uppercase italic leading-tight">Guía Completa de Alimentación</p>
+            </div>
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-coral border-2 border-transparent">
+                <i class="fas fa-allergies text-coral text-5xl mb-6 inline-block"></i>
+                <p class="font-black text-xl uppercase italic leading-tight">Guía de Alimentos Alergénicos</p>
+            </div>
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-xl border-b-[12px] border-yellow-400 border-2 border-transparent">
+                <i class="fas fa-leaf text-yellow-400 text-5xl mb-6 inline-block"></i>
+                <p class="font-black text-xl uppercase italic leading-tight">Guía Laxantes y Astringentes</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-white">
+        <div class="interactive-card max-w-xl mx-auto bg-slate-900 text-white rounded-[4rem] p-10 md:p-16 shadow-2xl relative border-[12px] border-baby-warm overflow-hidden">
+            <div class="absolute top-0 right-0 bg-coral text-white text-[10px] font-black px-12 py-2 rotate-45 translate-x-12 translate-y-8 uppercase tracking-tighter">Cupón Activado</div>
+            
+            <h3 class="text-4xl font-bold text-center mb-12 italic leading-tight">Todo listo para empezar hoy mismo.</h3>
+            
+            <div class="space-y-6 mb-12 max-w-sm mx-auto border-b border-white/10 pb-12 italic text-left">
+                <div class="flex items-start gap-4 hover:translate-x-2 transition-transform cursor-pointer">
+                    <i class="fas fa-check-circle text-coral mt-1"></i>
+                    <p class="text-base font-medium">Guía de 180+ Recetas Nutritivas</p>
+                </div>
+                <div class="flex items-start gap-4 hover:translate-x-2 transition-transform cursor-pointer">
+                    <i class="fas fa-check-circle text-coral mt-1"></i>
+                    <p class="text-base font-medium">Opciones sin azúcar refinada</p>
+                </div>
+                <div class="flex items-start gap-4 text-yellow-400 font-bold italic hover:translate-x-2 transition-transform cursor-pointer">
+                    <i class="fas fa-gift mt-1"></i>
+                    <p class="text-base">BONOS: Menú, Alérgenos y Digestión</p>
+                </div>
+            </div>
+
+            <div class="text-center mb-10 italic">
+                <span class="text-gray-500 line-through text-2xl font-bold block mb-2 italic">Valor Total: $197.00 USD</span>
+                <div class="flex items-center justify-center gap-2">
+                    <span class="text-7xl md:text-8xl font-black text-coral">$9.99</span>
+                    <span class="text-2xl font-black mt-6">USD</span>
+                </div>
+            </div>
+
+            <a href="https://go.hotmart.com/H104335447R?ap=ff26" class="btn-glow block w-full py-7 rounded-[2.5rem] text-white text-2xl font-black uppercase italic text-center shadow-xl">
+                ¡SÍ, QUIERO EL ACCESO!
+            </a>
+        </div>
+    </section>
+
+    <section class="py-24 bg-baby-warm px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 italic text-center">
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-sm">
+                <div class="flex justify-center mb-4 gap-1 text-sm text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-600 mb-6 text-sm italic">"Las recetas me salvaron la vida."</p>
+                <p class="font-bold text-gray-900">— Valentina G.</p>
+            </div>
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-sm border-2 border-coral/10">
+                <div class="flex justify-center mb-4 gap-1 text-sm text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-600 mb-6 text-sm italic">"Mi bebé come de todo ahora."</p>
+                <p class="font-bold text-gray-900">— Sofia R.</p>
+            </div>
+            <div class="interactive-card bg-white p-10 rounded-[3rem] shadow-sm">
+                <div class="flex justify-center mb-4 gap-1 text-sm text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="text-gray-600 mb-6 text-sm italic">"Excelente inversión."</p>
+                <p class="font-bold text-gray-900">— Laura M.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 bg-white text-center text-gray-400 text-[10px] font-bold uppercase tracking-[0.3em]">
+        &copy; 2026 Alimentación Segura | Nutriendo con Amor.
+    </footer>
+
+    <script>
+        let slots = 14;
+        setInterval(() => {
+            if(slots > 3) {
+                slots--;
+                document.getElementById('slots').innerText = slots;
+            }
+        }, 35000);
+    </script>
+</body>
+</html>
