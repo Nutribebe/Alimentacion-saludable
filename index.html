@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEBÉ CHAT | NUTRI-SAFE SYSTEM</title>
     
     <script>
@@ -20,180 +20,202 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --primary: #ff5f40; --gold: #ffd700; }
-        body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #0f172a; overflow-x: hidden; }
+        :root { --whatsapp: #25D366; --whatsapp-dark: #128C7E; }
+        body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #0f172a; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* --- NÚMEROS NEGRO PURO (LEGIBILIDAD 100%) --- */
-        .step-num { color: #000000 !important; font-weight: 900; font-size: 4.5rem; line-height: 1; opacity: 1 !important; }
+        /* --- NÚMEROS NEGRO PURO --- */
+        .step-num { color: #000000 !important; font-weight: 900; font-size: clamp(4rem, 10vw, 6rem); line-height: 1; }
 
-        /* --- EFECTO BRILLANTE PARA CELULAR (SOLAPAS) --- */
+        /* --- EFECTO BRILLANTE ADAPTATIVO --- */
         .shiny-card {
             position: relative;
             background: #fff;
-            border-radius: 2rem;
+            border-radius: 2.5rem;
             overflow: hidden;
-            border: 1px solid rgba(255, 95, 64, 0.1);
+            border: 1px solid rgba(37, 211, 102, 0.15);
+            height: 100%;
         }
         .shiny-card::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.8), transparent);
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(37, 211, 102, 0.1), transparent);
             transform: rotate(45deg);
-            animation: shine 4s infinite;
+            animation: shine 5s infinite;
         }
-        @keyframes shine {
-            0% { left: -100%; transition-property: left; }
-            20% { left: 100%; transition-property: left; }
-            100% { left: 100%; transition-property: left; }
-        }
+        @keyframes shine { 0% { left: -100%; } 20% { left: 100%; } 100% { left: 100%; } }
 
-        /* --- BOTÓN PULSANTE --- */
-        .btn-main {
-            background: linear-gradient(135deg, #ff5f40 0%, #ff2e05 100%);
-            animation: shadow-pulse 2s infinite;
+        /* --- BOTÓN VERDE FLUIDO --- */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 40px;
+            border-radius: 1.5rem;
+            color: white;
+            font-weight: 900;
+            text-decoration: none;
+            font-style: italic;
+            transition: transform 0.3s ease;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
         }
-        @keyframes shadow-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 95, 64, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 95, 64, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 95, 64, 0); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+        .btn-whatsapp:hover { transform: scale(1.05); }
 
-        /* --- CARRUSEL TESTIMONIOS --- */
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-320px * 9)); } }
-        .track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+        /* --- TESTIMONIOS INFINITOS --- */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-350px * 9)); } }
+        .track { display: flex; width: max-content; animation: scroll 50s linear infinite; }
+        .track:hover { animation-play-state: paused; }
     </style>
 </head>
 <body>
 
-    <div class="bg-black text-white py-3 px-4 sticky top-0 z-[1000] flex justify-between items-center border-b border-primary/50">
-        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
-            <span class="w-2 h-2 bg-red-500 rounded-full animate-ping"></span> VIVO: 142 MAMÁS VIENDO
+    <div class="bg-black text-white py-3 px-6 sticky top-0 z-[1000] border-b border-[#25D366]/40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 text-[10px] md:text-xs font-black uppercase tracking-tighter">
+                <span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> OFERTA EXCLUSIVA 2026
+            </div>
+            <div id="timer" class="text-[#25D366] font-mono font-bold text-sm">03:58:38</div>
         </div>
-        <div id="timer" class="text-primary font-mono text-sm font-black">03:58:38</div>
     </div>
 
-    <section class="pt-12 pb-20 px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="serif text-5xl md:text-8xl leading-tight mb-6">
-                Tu bebé come solo, <br><span class="text-primary italic">tú descansas.</span>
-            </h1>
-            <p class="text-lg text-slate-500 mb-10 italic">Dile adiós al miedo al atragantamiento y recupera la paz en la mesa con el Sistema Nutri-Safe de Bebé Chat.</p>
-            
-            <div class="relative mb-12">
+    <section class="relative pt-16 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+            <div>
+                <h1 class="serif text-5xl md:text-8xl leading-[1.05] mb-8 text-slate-900">
+                    Tu bebé come solo, <br><span class="text-[#25D366] italic">tú descansas.</span>
+                </h1>
+                <p class="text-xl text-slate-500 mb-10 max-w-xl mx-auto lg:mx-0 font-light italic">
+                    Elimina el miedo al atragantamiento y la angustia por el bajo peso con el sistema Nutri-Safe.
+                </p>
+                <div class="max-w-xs mx-auto lg:mx-0">
+                    <a href="#comprar" onclick="trackCheckout()" class="btn-whatsapp text-xl md:text-2xl uppercase">
+                        ¡ACCESO POR $9.99!
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
                 <img src="https://img.freepik.com/fotos-premium/bebe-feliz-sentado-su-silla-comiendo-si-mismo-manos-cara-manchadas-comida-bebes_1062229-1041.jpg" 
-                     class="rounded-[3rem] shadow-2xl border-[10px] border-slate-50 mx-auto w-full max-w-sm">
-            </div>
-
-            <a href="#comprar" onclick="trackCheckout()" class="btn-main text-white w-full max-w-xs py-6 rounded-2xl font-black text-xl italic inline-block">
-                ¡ACCESO POR $9.99!
-            </a>
-        </div>
-    </section>
-
-    <section class="py-20 bg-slate-50 px-6">
-        <h2 class="serif text-4xl text-center mb-12 italic">¿Te preocupa su <span class="text-primary">crecimiento?</span></h2>
-        
-        <div class="space-y-6 max-w-lg mx-auto">
-            <div class="shiny-card p-8 shadow-lg">
-                <h3 class="font-black text-xl mb-3 uppercase italic text-red-600">🩸 Alerta de Anemia</h3>
-                <p class="text-slate-600 italic">¿Sabías que a los 6 meses sus reservas de hierro bajan? Si no sabes qué alimentos dar, su energía y desarrollo cerebral están en riesgo.</p>
-            </div>
-            <div class="shiny-card p-8 shadow-lg">
-                <h3 class="font-black text-xl mb-3 uppercase italic text-red-600">📉 Bajo Peso</h3>
-                <p class="text-slate-600 italic">Ver la curva de crecimiento estancada es una pesadilla. No necesitas papillas de caja, necesitas calorías reales y seguras.</p>
-            </div>
-            <div class="shiny-card p-8 shadow-lg">
-                <h3 class="font-black text-xl mb-3 uppercase italic text-red-600">😱 Miedo al Ahogo</h3>
-                <p class="text-slate-600 italic">Ese nudo en la garganta cada vez que tu bebé tose. La falta de técnica es lo que genera el peligro, no el alimento sólido.</p>
+                     class="rounded-[4rem] shadow-2xl border-[12px] border-slate-50 w-full object-cover aspect-square md:aspect-auto">
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6">
-        <div class="max-w-4xl mx-auto space-y-20">
-            <div class="flex flex-col items-center text-center">
-                <span class="step-num">01</span>
-                <h4 class="serif text-3xl italic font-black mb-4">Cortes de Seguridad HD</h4>
-                <p class="text-slate-500 max-w-sm italic">Fotografías reales para que sepas el largo y ancho exacto de cada fruta, verdura y proteína. Cero dudas.</p>
-                <img src="https://img.freepik.com/foto-gratis/vista-frontal-hermoso-bebe-comiendo-sandia_23-2148651260.jpg" class="mt-8 rounded-3xl shadow-xl w-64">
-            </div>
-
-            <div class="flex flex-col items-center text-center">
-                <span class="step-num">02</span>
-                <h4 class="serif text-3xl italic font-black mb-4">Batidos "Power-Gain"</h4>
-                <p class="text-slate-500 max-w-sm italic">Nuestras famosas recetas para subir la hemoglobina y el peso sin usar azúcar ni ultraprocesados. El rescate nutricional de Bebé Chat.</p>
-            </div>
-
-            <div class="flex flex-col items-center text-center">
-                <span class="step-num">03</span>
-                <h4 class="serif text-3xl italic font-black mb-4">Semáforo Alérgenos</h4>
-                <p class="text-slate-500 max-w-sm italic">Introduce huevo, maní y lácteos con nuestro protocolo de 3 días. La seguridad médica en tu cocina.</p>
+    <section class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="serif text-4xl md:text-7xl mb-16 italic">¿Te preocupa su <span class="text-[#25D366]">crecimiento?</span></h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="shiny-card p-10 text-left">
+                    <h3 class="font-black text-2xl mb-4 text-red-600 italic">🩸 ANEMIA</h3>
+                    <p class="text-slate-600 italic leading-relaxed">Las reservas de hierro bajan a los 6 meses. Si no sabes qué ofrecer, su desarrollo cerebral está en juego.</p>
+                </div>
+                <div class="shiny-card p-10 text-left">
+                    <h3 class="font-black text-2xl mb-4 text-red-600 italic">📉 BAJO PESO</h3>
+                    <p class="text-slate-600 italic leading-relaxed">Olvídate de las papillas industriales. Tu bebé necesita calorías reales presentadas de forma 100% segura.</p>
+                </div>
+                <div class="shiny-card p-10 text-left">
+                    <h3 class="font-black text-2xl mb-4 text-red-600 italic">😱 ATRAGANTAMIENTO</h3>
+                    <p class="text-slate-600 italic leading-relaxed">No es el alimento, es el corte. Con nuestra técnica HD, ese nudo en tu garganta desaparece para siempre.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-900 overflow-hidden">
-        <h2 class="serif text-4xl text-white text-center mb-12 italic">Mamás <span class="text-primary underline">Bebe Chat</span></h2>
-        <div class="track">
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl">
-                <p class="italic text-sm font-bold">"Mi bebé no subía de peso y con los batidos de Bebe Chat el pediatra quedó sorprendido en el control."</p>
-                <p class="text-xs mt-4 text-primary font-black uppercase">— Valeria G.</p>
-            </div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl">
-                <p class="italic text-sm font-bold">"Por fin puedo comer al mismo tiempo que ella. La guía de cortes es la salvación."</p>
-                <p class="text-xs mt-4 text-primary font-black uppercase">— Elena M.</p>
-            </div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl">
-                <p class="italic text-sm font-bold">"Me daba terror el huevo, pero con el protocolo de alérgenos todo salió perfecto. ¡Gracias!"</p>
-                <p class="text-xs mt-4 text-primary font-black uppercase">— Sofía T.</p>
-            </div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"El contenido vale 10 veces lo que pagué."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Ana L.</p></div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"Las recetas de hierro son deliciosas."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Marta R.</p></div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"Ya no me estreso por cocinar."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Claudia B.</p></div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"Mi hijo ahora come de todo."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Paula C.</p></div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"Seguridad total en la mesa."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Gabi D.</p></div>
-            <div class="w-[280px] mx-4 p-8 bg-white rounded-[2rem] shadow-xl"><p class="italic text-sm font-bold">"La mejor inversión del 2026."</p><p class="text-xs mt-4 text-primary font-black uppercase">— Lucia F.</p></div>
-        </div>
-    </section>
-
-    <section id="comprar" class="py-24 px-6 text-center">
-        <div class="bg-white border-2 border-primary/20 rounded-[3rem] p-10 shadow-2xl max-w-sm mx-auto">
-            <h2 class="serif text-4xl mb-6 italic">Únete hoy</h2>
-            <div class="space-y-2 mb-8 text-slate-400 font-bold italic text-sm">
-                <div class="flex justify-between"><span>Guía Maestra de Cortes</span><span>$67</span></div>
-                <div class="flex justify-between"><span>Recetario Hierro/Peso</span><span>$47</span></div>
-                <div class="flex justify-between"><span>Protocolo Alérgenos</span><span>$37</span></div>
-                <div class="text-primary text-lg border-t pt-2"><span>Valor Real:</span><span class="line-through">$151</span></div>
-            </div>
-
-            <div class="flex flex-col items-center mb-10 leading-none">
-                <span class="text-slate-900 font-black text-xl mb-2">PAGAS SOLO:</span>
-                <div class="flex items-start text-primary font-black">
-                    <span class="text-3xl mt-4">$</span>
-                    <span class="text-[120px]">9</span>
-                    <span class="text-3xl mt-4">.99</span>
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto space-y-32">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <span class="step-num">01</span>
+                    <h4 class="serif text-4xl md:text-6xl italic font-black mb-6 uppercase">Cortes HD</h4>
+                    <p class="text-xl text-slate-500 italic mb-8">Sabrás el largo y ancho exacto de cada fruta y verdura. Cero dudas, seguridad total en cada bocado.</p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://img.freepik.com/foto-gratis/vista-frontal-hermoso-bebe-comiendo-sandia_23-2148651260.jpg" class="rounded-[3rem] shadow-2xl w-full">
                 </div>
             </div>
 
-            <a href="https://go.hotmart.com/H104335447R?ap=ff26" onclick="trackCheckout()" class="btn-main text-white w-full py-8 rounded-2xl font-black text-2xl italic uppercase mb-6">
-                ¡SI, QUIERO EL ACCESO!
-            </a>
-
-            <p class="text-[10px] text-slate-400 italic">Acceso vitalicio. Garantía de 7 días protegida por Hotmart. Bebé Chat &copy; 2026</p>
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                <div class="lg:w-1/2 text-center lg:text-right">
+                    <span class="step-num">02</span>
+                    <h4 class="serif text-4xl md:text-6xl italic font-black mb-6 uppercase">Batidos Power</h4>
+                    <p class="text-xl text-slate-500 italic mb-8">Nuestras famosas recetas para subir hemoglobina y peso sin usar azúcar. Nutrición real que se nota en la balanza.</p>
+                </div>
+                <div class="lg:w-1/2 bg-slate-100 h-64 md:h-96 rounded-[3rem] flex items-center justify-center text-slate-300 italic font-black text-4xl uppercase tracking-tighter shadow-inner">
+                    Contenido VIP
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 border-t border-slate-100 flex flex-col items-center text-center">
-        <div class="w-24 h-24 rounded-full overflow-hidden mb-6 border-4 border-primary">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200" class="w-full h-full object-cover">
+    <section class="py-24 bg-slate-900 overflow-hidden">
+        <h2 class="serif text-4xl md:text-6xl text-white text-center mb-16 italic">Mamás <span class="text-[#25D366] underline">Bebe Chat</span></h2>
+        <div class="track">
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl">
+                <p class="italic text-lg font-bold text-slate-800">"Mi bebé no subía de peso y con los batidos el pediatra quedó sorprendido. ¡Gracias!"</p>
+                <p class="mt-6 text-[#25D366] font-black uppercase tracking-widest">— Valeria G.</p>
+            </div>
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl">
+                <p class="italic text-lg font-bold text-slate-800">"Por fin puedo comer al mismo tiempo que ella. La guía de cortes es la salvación."</p>
+                <p class="mt-6 text-[#25D366] font-black uppercase tracking-widest">— Elena M.</p>
+            </div>
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl">
+                <p class="italic text-lg font-bold text-slate-800">"El huevo me daba pánico. Con el protocolo de alérgenos fue pan comido."</p>
+                <p class="mt-6 text-[#25D366] font-black uppercase tracking-widest">— Sofía T.</p>
+            </div>
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl opacity-50"><p class="italic">"La mejor inversión..."</p></div>
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl opacity-50"><p class="italic">"Muy fácil de seguir..."</p></div>
+            <div class="w-[320px] md:w-[400px] mx-6 p-10 bg-white rounded-[2.5rem] shadow-2xl opacity-50"><p class="italic">"Increíble material..."</p></div>
         </div>
-        <h3 class="serif text-2xl italic font-black mb-4 uppercase">Sobre Bebé Chat</h3>
-        <p class="text-slate-500 italic max-w-sm text-sm">Somos el sistema líder en alimentación segura. No vendemos PDFs, vendemos la seguridad de que tu bebé crecerá fuerte, sano y sin peligros en cada bocado.</p>
+    </section>
+
+    <section id="comprar" class="py-32 px-6 bg-slate-50">
+        <div class="max-w-3xl mx-auto bg-white border-2 border-[#25D366]/30 rounded-[4rem] p-12 md:p-24 shadow-[0_50px_100px_-20px_rgba(37,211,102,0.2)] text-center">
+            <h2 class="serif text-5xl md:text-7xl mb-10 italic">Únete ahora</h2>
+            
+            <div class="max-w-md mx-auto space-y-4 mb-16 text-slate-400 font-bold italic text-lg border-b pb-8">
+                <div class="flex justify-between"><span>Guía de Cortes HD</span><span>$67</span></div>
+                <div class="flex justify-between"><span>Recetario Hierro</span><span>$47</span></div>
+                <div class="flex justify-between text-[#25D366]"><span>Bono Alérgenos</span><span>GRATIS</span></div>
+            </div>
+
+            <p class="text-slate-900 font-black text-2xl mb-4 italic uppercase">HOY PAGAS SOLO:</p>
+            <div class="flex items-center justify-center font-black text-[#25D366] mb-12">
+                <span class="text-5xl md:text-6xl mt-6">$</span>
+                <span class="text-[140px] md:text-[200px] leading-none">9</span>
+                <span class="text-5xl md:text-6xl mt-6">.99</span>
+            </div>
+
+            <div class="max-w-sm mx-auto">
+                <a href="https://go.hotmart.com/H104335447R?ap=ff26" onclick="trackCheckout()" class="btn-whatsapp text-2xl md:text-3xl uppercase py-10">
+                    ¡ACCESO VIP!
+                </a>
+            </div>
+
+            <p class="mt-10 text-xs text-slate-400 italic font-medium">Acceso para toda la vida. 7 días de garantía total.</p>
+        </div>
+    </section>
+
+    <footer class="py-24 bg-white px-6 border-t border-slate-100">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16 text-center md:text-left">
+            <div class="w-40 h-40 rounded-full overflow-hidden border-8 border-slate-50 shadow-2xl flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h3 class="serif text-4xl italic font-black mb-6 uppercase tracking-tighter">Sobre Bebé Chat</h3>
+                <p class="text-xl text-slate-500 italic leading-relaxed">
+                    Somos el sistema líder en alimentación complementaria segura. Nuestra misión es que cada familia transforme el miedo en alegría, sabiendo que su bebé está recibiendo la mejor nutrición posible.
+                </p>
+            </div>
+        </div>
+        <p class="text-center mt-24 text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">&copy; 2026 BEBÉ CHAT • NUTRI-SAFE SYSTEM</p>
     </footer>
 
     <script>
