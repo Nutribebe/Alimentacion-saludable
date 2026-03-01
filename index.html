@@ -24,7 +24,7 @@
         body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #0f172a; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
 
-        /* --- BOTONES VERDE WHATSAPP (ÚNICOS EN VERDE) --- */
+        /* --- BOTÓN VERDE WHATSAPP --- */
         .btn-action {
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             display: flex;
@@ -48,9 +48,9 @@
         }
 
         /* --- NÚMEROS NEGROS --- */
-        .step-num { color: #000000 !important; font-weight: 900; font-size: clamp(4rem, 10vw, 6rem); line-height: 1; opacity: 1; }
+        .step-num { color: #000000 !important; font-weight: 900; font-size: clamp(4rem, 10vw, 6rem); line-height: 1; }
 
-        /* --- CARRUSEL CORREGIDO (9 TESTIMONIOS) --- */
+        /* --- CARRUSEL CORREGIDO --- */
         .testimonial-slider { overflow: hidden; width: 100%; background: #0f172a; padding: 60px 0; }
         .track { 
             display: flex; 
@@ -59,7 +59,7 @@
         }
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-340px * 9)); } /* 300px + 40px margin */
+            100% { transform: translateX(calc(-340px * 9)); }
         }
         .testimonial-card {
             width: 300px;
@@ -70,7 +70,7 @@
             flex-shrink: 0;
         }
 
-        /* --- TARJETA VIP CONTENIDO REAL --- */
+        /* --- TARJETA VIP --- */
         .vip-card {
             background: linear-gradient(135deg, #fff 0%, #fff5f2 100%);
             border: 2px dashed var(--coral);
@@ -83,18 +83,15 @@
             border-radius: 99px;
             font-size: 10px;
             font-weight: 900;
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
 
     <div class="bg-black text-white py-3 px-6 sticky top-0 z-[1000] border-b border-white/10">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
-            <div class="flex items-center gap-2"><span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> OFERTA POR TIEMPO LIMITADO</div>
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-[10px] md:text-xs font-black uppercase tracking-widest text-center">
+            <div><span class="text-[#25D366]">●</span> OFERTA 2026</div>
             <div id="timer">03:58:38</div>
         </div>
     </div>
@@ -116,9 +113,9 @@
         </div>
     </section>
 
-    <section class="py-24 bg-slate-50 px-6">
+    <section class="py-24 bg-slate-50 px-6 text-center">
         <div class="max-w-7xl mx-auto">
-            <h2 class="serif text-4xl md:text-7xl text-center mb-16 italic text-black">¿Te preocupa su <span class="text-[var(--coral)]">crecimiento?</span></h2>
+            <h2 class="serif text-4xl md:text-7xl mb-16 italic text-black">¿Te preocupa su <span class="text-[var(--coral)]">crecimiento?</span></h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-10 rounded-[3rem] shadow-xl border-b-4 border-[var(--coral)]">
                     <h3 class="font-black text-2xl mb-4 text-black uppercase italic">🩸 Anemia</h3>
@@ -153,22 +150,16 @@
                 <span class="step-num">02</span>
                 <h4 class="serif text-4xl md:text-6xl italic font-black text-black mb-6 uppercase">Batidos Power</h4>
                 <p class="text-xl text-slate-500 italic mb-8">Nuestras fórmulas para subir la hemoglobina sin estreñimiento.</p>
-                
                 <div class="vip-card p-8 rounded-[2rem] shadow-inner">
                     <span class="vip-badge">RECETA EXCLUSIVA</span>
                     <h5 class="font-black text-[var(--coral)] italic mb-2">Batido "Remolacha-Iron"</h5>
-                    <p class="text-xs text-slate-600 mb-4 font-bold uppercase italic tracking-wider">Remolacha + Naranja + Hojas Verdes</p>
-                    <div class="text-[10px] text-slate-400 font-medium leading-relaxed italic">
-                        * Esta combinación potencia la absorción de hierro no-hemo gracias a la Vitamina C. Incluida en tu guía.
-                    </div>
+                    <p class="text-[10px] text-slate-400 font-medium leading-relaxed italic">* Combinación estratégica para máxima absorción de Hierro.</p>
                 </div>
             </div>
-            <div class="lg:w-1/2 bg-slate-100 rounded-[3rem] p-10 flex items-center justify-center">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-[var(--coral)] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                        <span class="text-white text-3xl font-black">★</span>
-                    </div>
-                    <p class="font-black text-slate-900 uppercase italic tracking-tighter">Contenido VIP<br>Subida de Peso</p>
+            <div class="lg:w-1/2 bg-slate-100 rounded-[3rem] p-10 flex items-center justify-center text-center">
+                <div>
+                    <div class="w-20 h-20 bg-[var(--coral)] rounded-full flex items-center justify-center mx-auto mb-4"><span class="text-white text-3xl font-black">★</span></div>
+                    <p class="font-black text-black uppercase italic tracking-tighter">CONTENIDO VIP</p>
                 </div>
             </div>
         </div>
@@ -177,65 +168,58 @@
     <section class="testimonial-slider">
         <h2 class="serif text-4xl text-white text-center mb-16 italic">Mamás <span class="text-[var(--coral)] underline">Bebé Chat</span></h2>
         <div class="track">
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Mi bebé no subía de peso y con los batidos el pediatra quedó sorprendido. ¡Gracias!"</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Valeria G.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Por fin puedo comer al mismo tiempo que ella. La guía de cortes es la salvación."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Elena M.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"El huevo me daba pánico. Con el protocolo de alérgenos fue pan comido."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Sofía T.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Vale cada centavo. La tranquilidad de mi bebé no tiene precio."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Ana L.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Las recetas para la anemia son increíbles y le encantan."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Marta R.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Dejé de tener miedo al BLW gracias a Bebé Chat."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Claudia B.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Mi hijo ahora come brócoli solo, ¡increíble!"</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Paula C.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"El soporte y las guías son muy claras. 10/10."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Gabi D.</p>
-            </div>
-            <div class="testimonial-card">
-                <p class="italic font-bold text-slate-800 text-sm">"Ahorro mucho tiempo en la cocina con este método."</p>
-                <p class="mt-6 text-[var(--coral)] font-black text-xs uppercase">— Lucia F.</p>
-            </div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Mi bebé no subía de peso y con los batidos el pediatra quedó sorprendido."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— VALERIA G.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Por fin puedo comer tranquila mientras ella descubre sabores."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— ELENA M.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"La guía de cortes me quitó el miedo al ahogo el primer día."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— SOFÍA T.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Vale cada centavo. La tranquilidad no tiene precio."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— ANA L.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Las recetas de hierro son deliciosas."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— MARTA R.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Increíble cómo cambió nuestra hora de almuerzo."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— CLAUDIA B.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Mi hijo ahora come de todo gracias al método."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— PAULA C.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"Guías súper claras y fáciles de seguir."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— GABI D.</p></div>
+            <div class="testimonial-card"><p class="italic font-bold text-slate-800 text-sm">"La mejor inversión que hice como mamá primeriza."</p><p class="mt-6 text-[var(--coral)] font-black text-xs">— LUCÍA F.</p></div>
         </div>
     </section>
 
     <section id="comprar" class="py-32 px-6 bg-slate-50">
         <div class="max-w-3xl mx-auto bg-white border-2 border-[var(--coral)]/20 rounded-[4rem] p-12 md:p-24 shadow-2xl text-center">
             <h2 class="serif text-5xl md:text-7xl mb-12 text-black italic">Tu momento es hoy</h2>
-            <div class="max-w-xs mx-auto space-y-4 mb-16 text-slate-400 font-bold italic border-b pb-8">
-                <div class="flex justify-between"><span>Guía de Cortes HD</span><span>$67</span></div>
-                <div class="flex justify-between"><span>Batidos Hierro</span><span>$47</span></div>
-                <div class="flex justify-between text-[var(--coral)]"><span>Bono Alérgenos</span><span>GRATIS</span></div>
+            
+            <div class="max-w-md mx-auto space-y-6 mb-16 text-left border-b pb-12">
+                <div class="flex items-start gap-3 font-bold text-slate-700 italic">
+                    <span class="text-[var(--coral)]">✓</span>
+                    <span>+180 recetas saludables para tu bebe.</span>
+                </div>
+                <div class="flex items-start gap-3 font-bold text-slate-700 italic">
+                    <span class="text-[var(--coral)]">✓</span>
+                    <span>Fotos reales de cortes seguros.</span>
+                </div>
+
+                <div class="pt-4 space-y-4">
+                    <div class="flex justify-between items-center text-slate-400 font-bold italic text-sm">
+                        <span>🎁 Introduccion a la alimentación complementaria.</span>
+                        <span class="text-[#25D366] font-black ml-2 uppercase">GRATIS</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-400 font-bold italic text-sm">
+                        <span>🎁 Guía de alérgenos y laxantes.</span>
+                        <span class="text-[#25D366] font-black ml-2 uppercase">GRATIS</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-400 font-bold italic text-sm">
+                        <span>🎁 Menú gratis x 21 días.</span>
+                        <span class="text-[#25D366] font-black ml-2 uppercase">GRATIS</span>
+                    </div>
+                </div>
             </div>
 
             <p class="text-black font-black text-xl mb-4 italic uppercase">PAGAS SOLO:</p>
             <div class="flex items-center justify-center font-black text-black mb-12 leading-none">
                 <span class="text-5xl mt-6">$</span>
-                <span class="text-[140px] md:text-[200px] text-black">9</span>
+                <span class="text-[140px] md:text-[200px]">9</span>
                 <span class="text-5xl mt-6">.99</span>
             </div>
 
             <div class="max-w-xs mx-auto">
                 <a href="https://go.hotmart.com/H104335447R?ap=ff26" onclick="trackCheckout()" class="btn-action text-2xl">¡ACCESO VIP!</a>
             </div>
-            <p class="mt-10 text-xs text-slate-400 italic">Acceso vitalicio. 7 días de garantía Hotmart.</p>
         </div>
     </section>
 
@@ -244,9 +228,7 @@
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300&h=300" class="w-full h-full object-cover">
         </div>
         <h3 class="serif text-3xl italic font-black text-black mb-4 uppercase tracking-tighter">Sobre Bebé Chat</h3>
-        <p class="text-lg text-slate-500 italic max-w-xl leading-relaxed">
-            Especialistas en nutrición infantil y seguridad alimentaria. Hemos ayudado a miles de familias a disfrutar de la comida sin miedos ni estrés.
-        </p>
+        <p class="text-lg text-slate-500 italic max-w-xl">Especialistas en nutrición infantil y seguridad alimentaria. Ayudando a miles de familias a comer sin miedos.</p>
         <p class="mt-16 text-[10px] font-black text-slate-300 uppercase tracking-[0.5em]">&copy; 2026 BEBÉ CHAT • NUTRI-SAFE SYSTEM</p>
     </footer>
 
